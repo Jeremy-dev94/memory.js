@@ -3,12 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Sigmar+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="memory.css">
     <link rel="stylesheet" href="bootstrap.min.css">
-    <title>Document</title>
+    <title>Jeu de Memory</title>
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="memory.html">Acceuil<span class="visually-hidden">(current)</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="livre.html">Livres</a></li>   
+              <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>  
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container">
+    <h1 class="border border-dark m-2 p-2 rounded text-center p_bgColorBlue">Liste de livre</h1>
+        <div>
+            <table class="table text-center">
+                <tr class="table-dark">
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Nombre de pages</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+                <tr>
+                    <td>L'algorithmique selon H2PROG</td>
+                    <td>Matthieu GASTON</td>
+                    <td>200</td>
+                    <td><button class="btn btn-warning">Modifier</button></td>
+                    <td><button class="btn btn-danger">Suprimer</button></td>
+                </tr>
+                <tr>
+                    <td>La France du 19ème</td>
+                    <td>Albert Patrick</td>
+                    <td>500</td>
+                    <td><button class="btn btn-warning">Modifier</button></td>
+                    <td><button class="btn btn-danger">Suprimer</button></td>
+                </tr>
+                <tr>
+                    <td>Le Monde des animaux</td>
+                    <td>Marc Merlin</td>
+                    <td>250</td>
+                    <td><button class="btn btn-warning">Modifier</button></td>
+                    <td><button class="btn btn-danger">Suprimer</button></td>
+                </tr>
+                <tr>
+                    <td>Le virus d'asie</td>
+                    <td>Tya Milo</td>
+                    <td>120</td>
+                    <td><button class="btn btn-warning">Modifier</button></td>
+                    <td><button class="btn btn-danger">Suprimer</button></td>
+                </tr>
+            </table>
+            <a href="" class="btn btn-success d-block">Ajouter</a>
+        </div>
+    </div>
+
+
+    <script src="memory.js"></script>
+    <script src="memoryServ.js"></script>
 </body>
 </html>
