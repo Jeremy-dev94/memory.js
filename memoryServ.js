@@ -30,10 +30,35 @@ for (i = 0 ; i <= livres.length -1 ; i++) {
     livre1.innerHTML = `<td>${livres[i].nom}</td>
                 <td>${livres[i].auteur}</td>
                 <td>${livres[i].pages}</td>
-                <td><button class="btn btn-warning">Modifier</button></td>
-                <td><button class="btn btn-danger">Supprimer</button></td>`;
+                <button type="button" class="btn btn-warning m-4">Modifier</button>
+                <button type="button" class="btn btn-danger m-4">Supprimer</button>`;
     table.appendChild(livre1);
 }
 
+function ajoutFormulaire() {
+    if (!document.querySelector("#formAjout")){
+    var monForm = document.createElement("form");
+    monForm.setAttribute("id","formAjout");
+    monForm.innerHTML= `
+                <fieldset>
+                <legend>Création d'un livre</legend>    
+                    <div class="form-group">
+                        <label for="titre">Titre</label>
+                        <input type="text" class="form-control" id="titre">
+                    </div>
+                    <div class="form-group">
+                        <label for="auteur">Auteur</label>
+                        <input type="text" class="form-control" id="auteur">
+                    </div>
+                    <div class="form-group">
+                        <label for="pages">Pages</label>
+                        <input type="number" class="form-control" id="pages">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </fieldset>`;
+
+                    document.querySelector(".container").appendChild(monForm);
+     }
+}
 
 
