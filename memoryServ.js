@@ -39,11 +39,12 @@ function ajoutFormulaire() {
    document.querySelector("#ajoutForm").removeAttribute("class")
 }
 
-document.querySelector("#validationFormAjout").addEventListener("click", function(event){
-    event.preventDefault()
-    var titre = document.querySelector("#ajoutForm #titre").Value;
+document.getElementById("#validationFormAjout").addEventListener("click", function(event){
+    event.preventDefault();
+    var titre = document.querySelector("#ajoutForm #titre").value;
     var auteur = document.querySelector("#ajoutForm #auteur").value;
     var pages = document.querySelector("#ajoutForm #pages").value;
+
     ajoutLivre(titre, auteur, pages)
 });
 
@@ -53,6 +54,7 @@ function ajoutLivre(titre, auteur, pages) {
         auteur : auteur,
         pages : pages
     }
+
 biblio.push(livre);
 console.log(biblio);
 }
