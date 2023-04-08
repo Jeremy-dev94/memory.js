@@ -24,41 +24,35 @@ var l4 = {
     pages: 120
 }
 
-var livres = [l1,l2,l3,l4];
-for (i = 0 ; i <= livres.length -1 ; i++) {
+var biblio = [l1,l2,l3,l4];
+for (i = 0 ; i <= biblio.length -1 ; i++) {
     var livre1 = document.createElement("tr");
-    livre1.innerHTML = `<td>${livres[i].nom}</td>
-                <td>${livres[i].auteur}</td>
-                <td>${livres[i].pages}</td>
+    livre1.innerHTML = `<td>${biblio[i].nom}</td>
+                <td>${biblio[i].auteur}</td>
+                <td>${biblio[i].pages}</td>
                 <button type="button" class="btn btn-warning m-4">Modifier</button>
                 <button type="button" class="btn btn-danger m-4">Supprimer</button>`;
     table.appendChild(livre1);
 }
 
 function ajoutFormulaire() {
-    if (!document.querySelector("#formAjout")){
-    var monForm = document.createElement("form");
-    monForm.setAttribute("id","formAjout");
-    monForm.innerHTML= `
-                <fieldset>
-                <legend>Création d'un livre</legend>    
-                    <div class="form-group">
-                        <label for="titre">Titre</label>
-                        <input type="text" class="form-control" id="titre">
-                    </div>
-                    <div class="form-group">
-                        <label for="auteur">Auteur</label>
-                        <input type="text" class="form-control" id="auteur">
-                    </div>
-                    <div class="form-group">
-                        <label for="pages">Pages</label>
-                        <input type="number" class="form-control" id="pages">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Valider</button>
-                </fieldset>`;
-
-                    document.querySelector(".container").appendChild(monForm);
-     }
+   document.querySelector("#ajoutForm").removeAttribute("class")
 }
 
+document.querySelector("#validationFormAjout").addEventListener("click", function(event){
+    event.preventDefault()
+    var titre = document.querySelector("#ajoutForm #titre").Value;
+    var auteur = document.querySelector("#ajoutForm #auteur").value;
+    var pages = document.querySelector("#ajoutForm #pages").value;
+    ajoutLivre(titre, auteur, pages)
+});
 
+function ajoutLivre(titre, auteur, pages) {
+    var livre = {
+        nom : titre,
+        auteur : auteur,
+        pages : pages
+    }
+biblio.push(livre);
+console.log(biblio);
+}
